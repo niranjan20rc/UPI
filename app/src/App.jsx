@@ -1,31 +1,30 @@
 import React from "react";
 
 function App() {
-  const handlePay = () => {
-    // Replace with your UPI ID and details
-    const upiLink =
-      "upi://pay?pa=niranjan@oksbi&pn=Niranjan&am=50&cu=INR";
+  const openGPay = () => {
+    // Intent link for Google Pay
+    const gpayIntent =
+      "intent://upi/pay#Intent;scheme=upi;package=com.google.android.apps.nbu.paisa.user;end";
 
-    // Redirect to Google Pay (or any installed UPI app)
-    window.location.href = upiLink;
+    window.location.href = gpayIntent;
   };
 
   return (
     <div style={{ textAlign: "center", padding: "50px" }}>
-      <h2>Pay using Google Pay</h2>
+      <h2>Open Google Pay App</h2>
       <button
-        onClick={handlePay}
+        onClick={openGPay}
         style={{
           padding: "15px 30px",
           fontSize: "18px",
-          background: "#4285F4",
+          background: "#34a853",
           color: "white",
           border: "none",
           borderRadius: "10px",
           cursor: "pointer",
         }}
       >
-        Pay ₹50 with GPay
+        Open GPay
       </button>
     </div>
   );
